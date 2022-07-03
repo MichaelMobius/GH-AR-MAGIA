@@ -1,0 +1,17 @@
+//==============================================================================
+// Welcome to shader authoring in Spark AR Studio!
+//==============================================================================
+
+#import <gradients>
+#import <sdf>
+
+vec4 main() {
+	vec2 uv = fragment(std::getVertexTexCoord());
+	vec2 position = -1.0+2.0*uv;
+	float time = std::getTime();
+	float red=abs(sin(position.x*position.y+time/5.0));
+	float green=abs(sin(position.x*position.y+time/4.0));
+	float blue=abs(sin(position.x*position.y+time/3.0));
+	return vec4(red,green,blue,1.0);
+}
+
